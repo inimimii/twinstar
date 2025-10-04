@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopUp Produk</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #2d3238;
+      color: white;
+    }
+    header {
+      background: #212529;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 30px;
+    }
+    main {
+      padding: 80px 20px;
+    }
+    section {
+      background: #212529;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+      background: #2d3238;
+      color: white;
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+    .product {
+      background: #2d3238;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .product:hover, .product.active {
+      background: #ffffff;
+      color: #000;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      height: 100px;
+      object-fit: cover;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #00aaff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0088cc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="images/logodark.png" alt="Logo"></div>
+    <h3>TopUp Produk</h3>
+  </header>
+
+  <main>
+    <!-- ABOUT PRODUK -->
+    <section id="about">
+      <h2>About Produk</h2>
+      <p>Top-up produk digital cepat, aman, dan terpercaya hanya di TwinStar Store. Pilih produk yang kamu inginkan, isi data, lalu konfirmasi pembelian!</p>
+    </section>
+
+    <!-- ISI DATA DIRI -->
+    <section id="data">
+      <h2>Isi Data Diri</h2>
+      <label>User ID (contoh: 12345678)</label>
+      <input type="text" id="userId" placeholder="Masukkan User ID">
+      <label>Server ID (contoh: 1234)</label>
+      <input type="text" id="serverId" placeholder="Masukkan Server ID">
+      <label>Nomor WhatsApp</label>
+      <input type="tel" id="nomorWa" placeholder="Masukkan Nomor WhatsApp aktif">
+    </section>
+
+    <!-- PILIH PRODUK -->
+    <section id="produk">
+      <h2>Pilih Produk</h2>
+      <div class="product-list" id="productList">
+        <div class="product" data-name="Diamond 86" data-price="Rp20.000">
+          <img src="images/product1.png" alt="produk">
+          <p>Diamond 86</p>
+          <small>Rp20.000</small>
+        </div>
+        <div class="product" data-name="Diamond 170" data-price="Rp40.000">
+          <img src="images/product2.png" alt="produk">
+          <p>Diamond 170</p>
+          <small>Rp40.000</small>
+        </div>
+        <div class="product" data-name="Diamond 257" data-price="Rp60.000">
+          <img src="images/product3.png" alt="produk">
+          <p>Diamond 257</p>
+          <small>Rp60.000</small>
+        </div>
+        <div class="product" data-name="Diamond 514" data-price="Rp120.000">
+          <img src="images/product4.png" alt="produk">
+          <p>Diamond 514</p>
+          <small>Rp120.000</small>
+        </div>
+        <div class="product" data-name="Diamond 706" data-price="Rp160.000">
+          <img src="images/product5.png" alt="produk">
+          <p>Diamond 706</p>
+          <small>Rp160.000</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONFIRMASI -->
+    <section id="konfirmasi">
+      <button id="confirmBtn">Konfirmasi Pembelian</button>
+    </section>
+  </main>
+
+  <script>
+    let selectedProduct = null;
+
+    document.querySelectorAll('.product').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.product').forEach(p => p.classList.remove('active'));
+        item.classList.add('active');
+        selectedProduct = {
+          name: item.dataset.name,
+          price: item.dataset.price
+        };
+      });
+    });
+
+    document.getElementById('confirmBtn').addEventListener('click', () => {
+      const userId = document.getElementById('userId').value.trim();
+      const serverId = document.getElementById('serverId').value.trim();
+      const nomorWa = document.getElementById('nomorWa').value.trim();
+
+      if (!userId || !serverId || !nomorWa || !selectedProduct) {
+        alert('Mohon isi semua data dan pilih produk terlebih dahulu!');
+        return;
+      }
+
+      const url = `https://wa.me/6285166312994?text=%F0%9F%92%AB%20TwinStar%20Store%20%E2%80%94%0Ahi%20hello%20bonjour%20min..%0Ai%20wnna%20buy%20something...%0Ahere%20my%20receipt,%20%0A%0A%E2%95%AD%20Category:%0A%E2%95%B0%20TopUp%20Game%0A%0A%E2%95%AD%20Product:%0A%E2%95%B0%20${encodeURIComponent(selectedProduct.name)}%0A%0A%E2%95%AD%20Price:%0A%E2%95%B0%20${encodeURIComponent(selectedProduct.price)}%0A%0A%E2%95%AD%20Id%20Mlbb:%0A%E2%95%B0%20${encodeURIComponent(userId)}%0A%0A%E2%95%AD%20Id%20Server:%0A%E2%95%B0%20${encodeURIComponent(serverId)}%0A%0A%E2%95%AD%20Contact:%0A%E2%95%B0%20${encodeURIComponent(nomorWa)}%0A%0At'ank'ou%20i%20wnna%20transfer%20right%20now!%20%0Await%20a%20min%20i%20send%20transfer%20proof`;
+      
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
