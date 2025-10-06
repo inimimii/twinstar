@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TwinStar Digital Store">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="TwinStar Team">
+        <title>TwinStar Store</title>
+        <link rel="icon" type="image/x-icon" href="image/favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <!-- Navigasi -->
+            <button class="nav-toggle">☰</button>
+            <a href="index.html"><div class="nav-logo"><img id="nav-logo" src="image/navlogo.png" alt="TwinStar Logo"></div></a>
+            <div class="nav-sidebar" id="sidebar">
+                <img id="sidebar-logo" src="image/sidlogo.png" alt="TwinStar Logo">
+                <a href="index.html"><span class="sidebar-text">✦ㅤBeranda</span></a>
+                <a href="topupgame.html"><span class="sidebar-text">✦ㅤTop-up Game</span></a>
+                <a href="vouchergame.html"><span class="sidebar-text">✦ㅤVoucher Game</span></a>
+                <a href="apppremium.html"><span class="sidebar-text">✦ㅤApp Premium</span></a>
+                <a href="pulsatoken.html"><span class="sidebar-text">✦ㅤPulsa & Token</span></a>
+                <a href="socialmedia.html"><span class="sidebar-text">✦ㅤLayanan Sosmed</span></a>
+                <a href="paidedit.html"><span class="sidebar-text">✦ㅤPaid Edit</span></a>
+            </div>
+        </header>
+        <div class="overlay" id="overlay"></div>
+        <main>
+            <!-- Banner -->
+            <section class="banner">
+                <img id="banner" src="image/banner.jpg" alt="TwinStar Banner">
+            </section>
+            <!-- Flashsale -->
+            <section class="flashsale">
+                <div class="flashsale-header">
+                    <h2><span class=flashsale-header-icon>💫</span><span class="flashsale-header-text">Flashsale</span></h2>
+                    <small class="wave-text"><span>Penawaran</span> <span>Terbatas!</span></small>
+                </div>
+                <div class="flashsale-items">
+                    <div class="flashsale-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>One-time Purchase</h3>
+                        <h4>Weekly Diamond Pass</h4>
+                        <h5><del>Rp 28.000</del></h5>
+                        <h6>Rp 21.500 <span>(23%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>Pre-Order (Slow)</h3>
+                        <h4>Weekly Diamond Pass</h4>
+                        <h5><del>Rp 28.000</del></h5>
+                        <h6>Rp 23.500 <span>(16%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>Pre-Order (Semi Fast)</h3>
+                        <h4>Weekly Diamond Pass</h4>
+                        <h5><del>Rp 28.000</del></h5>
+                        <h6>Rp 25.500 <span>(9%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale3.jpg" alt="Flashsale Product C">
+                        <h3>Pre-Order (Next Month)</h3>
+                        <h4>Starlight Card</h4>
+                        <h5><del>Rp 29.500</del></h5>
+                        <h6>Rp 28.000 <span>(5%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale4.jpg" alt="Flashsale Product D">
+                        <h3>Pre-Order (Slow)</h3>
+                        <h4>59 Diamond</h4>
+                        <h5><del>Rp 16.000</del></h5>
+                        <h6>Rp 12.500 <span>(18%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale4.jpg" alt="Flashsale Product D">
+                        <h3>Pre-Order (Slow)</h3>
+                        <h4>295 Diamond</h4>
+                        <h5><del>Rp 77.000</del></h5>
+                        <h6>Rp 56.500 <span>(26%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                    <div class="flashsale-product">
+                        <img src="image/flashsale4.jpg" alt="Flashsale Product D">
+                        <h3>Pre-Order (Slow)</h3>
+                        <h4>1000 Diamond</h4>
+                        <h5><del>Rp 253.000</del></h5>
+                        <h6>Rp 191.500 <span>(36%)</span></h6>
+                        <p class="countdown" data-time="2026-10-04T23:59:59">00:00:00</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Catalogue -->
+            <section class="catalogue">
+                <div class="catalogue-header">
+                    <h2><span class=flashsale-header-icon>⭐</span><span class="flashsale-header-text">Catalogue</span></h2>
+                    <small class="wave-text"><span>Pilihan</span> <span>Produk</span> <span>Lengkap!</span></small>
+                </div>
+                <div class="catalogue-category">
+                    <button class="tab-btn active" data-tab="topupgame">Top-up Game</button>
+                    <button class="tab-btn" data-tab="vouchergame">Voucher Game</button>
+                    <button class="tab-btn" data-tab="apppremium">App Premium</button>
+                    <button class="tab-btn" data-tab="pulsatoken">Pulsa & Token</button>
+                    <button class="tab-btn" data-tab="socialmedia">Layanan Sosmed</button>
+                    <button class="tab-btn" data-tab="paidedit">Paid Edit</button>
+                    <button class="tab-btn" data-tab="comingsoon">Coming Soon</button>
+                </div>
+                <div class="catalogue-items active" id="topupgame">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Mobile Legends</h3>
+                        <h4>Moonton</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>Magic Chess: Go Go</h3>
+                        <h4>Vizta Games</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale3.jpg" alt="Flashsale Product C">
+                        <h3>Free Fire</h3>
+                        <h4>Garena</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale4.jpg" alt="Flashsale Product D">
+                        <h3>PUBG Mobile</h3>
+                        <h4>Tencent Games</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>EA SPORTS FC Mobile</h3>
+                        <h4>EA SPORTS</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Valorant</h3>
+                        <h4>Riot Games</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Honor of Kings</h3>
+                        <h4>TiMi Studio</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Genshin Impact</h3>
+                        <h4>HoYoverse</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Point Blank</h3>
+                        <h4>Zepetto</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Arena of Valor</h3>
+                        <h4>Garena</4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Mob Rush</h3>
+                        <h4>Vizta Games</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Call of Duty Mobile</h3>
+                        <h4>Garena</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Growtopia</h3>
+                        <h4>Ubisoft Entertainment</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Honkai: Star Rail</h3>
+                        <h4>HoYoverse</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Ragnarok Origin</h3>
+                        <h4>Gravity Corporation</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Ragnarok X: Next Gen</h3>
+                        <h4>Nuverse</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>League of Legends</h3>
+                        <h4>Riot Games</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Sausage Man</h3>
+                        <h4>XD Entertainment</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Zenless Zone Zero</h3>
+                        <h4>HoYoverse</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Blood Strike</h3>
+                        <h4>Netease</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Undawn</h3>
+                        <h4>Garena</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Honkai Impact 3</h3>
+                        <h4>HoYoverse</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Marvel Rivals</h3>
+                        <h4>Netease</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Metal Slug: Awakening</h3>
+                        <h4>VNG</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Zepeto</h3>
+                        <h4>Zepeto</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="vouchergame">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Roblox</h3>
+                        <h4>Roblox Corporation</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Garena Shell</h3>
+                        <h4>Garena</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Point Blank</h3>
+                        <h4>Zepetto</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Steam (Indonesia)</h3>
+                        <h4>Steam</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Google Play (Indonesia)</h3>
+                        <h4>Google</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Playstation (Indonesia)</h3>
+                        <h4>Playstation</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>GeForce NOW</h3>
+                        <h4>Nvidia</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="apppremium">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Netflix</h3>
+                        <h4>Netflix Inc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Spotify</h3>
+                        <h4>Spotify Ab</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Alight Motion</h3>
+                        <h4>Alight Motion</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Capcut</h3>
+                        <h4>Bytedance Pte Ltd</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Youtube</h3>
+                        <h4>Google</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Disney+ Hotstar</h3>
+                        <h4>The Walt Disney Company</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Wink</h3>
+                        <h4>Meitu</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Telegram</h3>
+                        <h4>Telegram Fz Llc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Remini</h3>
+                        <h4>Bending Spoons</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>PicsArt</h3>
+                        <h4>PicsArt Inc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Wattpad</h3>
+                        <h4>Wattpad</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Apple Music</h3>
+                        <h4>Apple</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Prime Video</h3>
+                        <h4>Amazon Mobile Llc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Bstation</h3>
+                        <h4>Balaboom Pte Ltd</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>HBO Max</h3>
+                        <h4>Warner Media Llc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Loklok</h3>
+                        <h4>Jigu Dev</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Scribd</h3>
+                        <h4>Scribd Inc</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Vidio</h3>
+                        <h4>Pt Vidio Dot Com</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Viu</h3>
+                        <h4>Vuclip Mobile Video</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>WeTV</h3>
+                        <h4>Image Future</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Iqiyi</h3>
+                        <h4>Iqiyi</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Ibis Paint</h3>
+                        <h4>Ibis Inc</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="pulsatoken">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>Telkomsel</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>By.U</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>XL Axiata</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>Axis</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>Smartfren</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>Indosat Ooredoo</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Pulsa</h3>
+                        <h4>Tri</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>Token</h3>
+                        <h4>PLN</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="socialmedia">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Instagram</h3>
+                        <h4>Instagram</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>TikTok</h3>
+                        <h4>TikTok Pte Ltd</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="paidedit">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Video</h3>
+                        <h4>Paid Edit</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale2.jpg" alt="Flashsale Product B">
+                        <h3>Graphic Design</h3>
+                        <h4>Paid Edit</h4>
+                    </div>
+                </div>
+                <div class="catalogue-items" id="comingsoon">
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Joki Game</h3>
+                        <h4>Segera Hadir</h4>
+                    </div>
+                    <div class="catalogue-product">
+                        <img src="image/flashsale1.jpg" alt="Flashsale Product A">
+                        <h3>Joki Tugas</h3>
+                        <h4>Segera Hadir</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img id="footer-logo" src="image/navlogo.png" alt="TwinStar Logo">
+                <p>Top-Up game termurah hanya di TwinStar Store. Pengiriman cepat, 100% legal dengan payment terlengkap di Indonesia.</p>
+            </div>
+            <div>
+                <h4>NAVIGATION</h4>
+                <a href="topupgame.html">TopUp Game</a>
+                <a href="vouchergame.html">Voucher Game</a>
+                <a href="apppremium.html">App Premium</a>
+                <a href="pulsatoken.html">Pulsa & Token</a>
+                <a href="socialmedia.html">Layanan Sosmed</a>
+                <a href="paidedit.html">Paid Edit</a>
+            </div>
+            <div>
+                <h4>FOLLOW US</h4>
+                <div class="social-icon">
+                    <a href="https://www.instagram.com/twinstarid"><img src="image/instagram.png" alt="Instagram"></a>
+                    <a href="https://chat.whatsapp.com/HzeNmtnpCmhFxKnELSSNYp"><img src="image/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="https://linktr.ee/twinstarid"><img src="image/linktree.png" alt="LinkTree"></a>
+                </div>
+            </div>
+            <div class="help">
+                <h4>HELP CENTER</h4>
+                <a href="https://wa.me/6282129678431"><button>Customer Service</button></a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
