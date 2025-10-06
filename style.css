@@ -1,0 +1,518 @@
+/* Font */
+@font-face {
+    font-family: 'TSBlack';
+    src: url('font/SFProDisplayBlack.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSBold';
+    src: url('font/SFProDisplayBold.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSHeavy';
+    src: url('font/SFProDisplayHeavy.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSLight';
+    src: url('font/SFProDisplayLight.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSMedium';
+    src: url('font/SFProDisplayMedium.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSRegular';
+    src: url('font/SFProDisplayRegular.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSSemibold';
+    src: url('font/SFProDisplaySemibold.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSThin';
+    src: url('font/SFProDisplayThin.otf') format('truetype');
+}
+@font-face {
+    font-family: 'TSUltralight';
+    src: url('font/SFProDisplayUltralight.otf') format('truetype');
+}
+
+/* Body */
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "TSRegular";
+    background: #2d3238;
+    color: white;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background: #212529;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background 0.4s ease;
+}
+
+/* Navigasi */
+.nav-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: color 0.4s ease;
+}
+
+.nav-logo img {
+    height: 30px;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+}
+
+.nav-sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: #212529;
+    padding-top: 60px;
+    transition: left 0.4s ease, background 0.4s ease, opacity 0.4s ease;
+    z-index: 999;
+    opacity: 0;
+}
+
+.nav-sidebar.active {
+    left: 0;
+    opacity: 1;
+}
+
+.nav-sidebar img {
+    margin-top: -55px;
+    margin-left: 10%;
+    margin-bottom: -15px;
+    width: 80%;
+    height: auto;
+}
+
+.nav-sidebar a {
+    display: block;
+    font-family: "TSSemibold";
+    padding: 13px 0px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.4s, color 0.4s;
+}
+
+.nav-sidebar a:hover, .nav-sidebar a:active {
+    background: #2d3238;
+}
+
+.sidebar-text {
+    padding-left: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Main */
+main {
+    padding-top: 60px;
+}
+
+/* Banner */
+.banner img {
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: -2.5%;
+    border-radius: 10px;
+    height: auto;
+    max-height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Flashsale */
+.flashsale {
+    padding: 15px 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: #212529;
+    border-radius: 10px;
+    transition: background 0.4s ease;
+}
+
+.flashsale .flashsale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.flashsale h2 {
+    font-size: 12px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.flashsale-header-text {
+    font-family: "TSSemibold", cursive;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.flashsale small {
+    padding-top: 10px;
+    font-family: 'TSMedium', cursive;
+    margin-right: 5px;
+}
+
+.wave-text span {
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.wave-text span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.wave-text span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+}
+
+.flashsale-items {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+}
+
+.flashsale-items .flashsale-product {
+    flex: 0 0 160px;
+    max-width: 160px;
+    scroll-snap-align: start;
+    background: #2d3238;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+}
+
+.flashsale-items .flashsale-product:hover {
+    transform: translateY(-4px);
+}
+
+.flashsale-product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.flashsale-product h3 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+.flashsale-product h4 {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.flashsale-product h5 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    color: #bbb;
+}
+
+.flashsale-product h6 {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.flashsale-product span {
+    color: #f6ff96;
+}
+
+.flashsale-product p {
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.flashsale-items::-webkit-scrollbar {
+    height: 5px;
+}
+.flashsale-items::-webkit-scrollbar-thumb {
+    background: #2d3238;
+    border-radius: 999px;
+}
+
+@media (max-width: 480px) {
+    .flashsale-items .flashsale-product {
+        flex: 0 0 140px; max-width: 140px;
+    }
+}
+
+/* Catalogue */
+.catalogue {
+    padding: 15px 15px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    background: #212529;
+    border-radius: 10px;
+    transition: background 0.4s ease;
+}
+
+.catalogue .catalogue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.catalogue h2 {
+    font-size: 12px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.catalogue-header-icon {
+    font-family: "TSEmoji";
+    font-size: 22px;
+}
+
+.catalogue-header-text {
+    font-family: "TSSemibold", cursive;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.catalogue small {
+    padding-top: 10px;
+    font-family: 'TSMedium', cursive;
+    margin-right: 5px;
+}
+
+.catalogue-category {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+}
+
+.catalogue-category::-webkit-scrollbar {
+    display: none;
+}
+
+.catalogue-category button {
+    flex: 0 0 auto;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "TSSemibold";
+    background: #2d3238;
+    color: white;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.catalogue-category button.active {
+    background: #ffffff;
+    color: black;
+}
+
+.catalogue-items {
+  display: none;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.catalogue-items.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.catalogue-items .catalogue-product {
+  flex: 0 0 160px;       /* ukuran fix seperti versi scroll */
+  max-width: 160px;
+  background: #2d3238;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.catalogue-items .catalogue-product:hover {
+  transform: translateY(-4px);
+}
+
+.catalogue-product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.catalogue-product h3 {
+  font-size: 12px;
+  margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+.catalogue-product h4 {
+  font-size: 10px;
+  margin-top: 1px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+/* biar rapih di HP */
+@media (max-width: 480px) {
+  .catalogue-items .catalogue-product {
+    flex: 0 0 140px;
+    max-width: 140px;
+  }
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+        position: static;
+        left: 0;
+        width: auto;
+        height: auto;
+        display: flex;
+        background: none;
+        padding: 0;
+        opacity: 1 !important;
+    }
+    .sidebar a,
+    .sidebar button {
+        display: inline-block;
+        padding: 10px 15px;
+    }
+    .nav-toggle, .overlay { display: none; }
+}
+
+footer {
+    background: #212529;
+    color: white;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+footer .footer-logo img {
+    height: 40px;
+    margin-bottom: 10px;
+    transition: opacity 0.4s ease;
+}
+
+footer h4 {
+    margin: 0 0 10px;
+    font-family: TSSemibold;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+
+.social-icon {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2d3238;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.help button {
+    background: #2d3238;
+    font-family: TSMedium;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.4s ease, color 0.4s ease;
+}
