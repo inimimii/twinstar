@@ -47,87 +47,62 @@ tabButtons.forEach(btn => {
 const uidEl = document.getElementById('uid');
 const zoneEl = document.getElementById('zone');
 const result = document.getElementById('result');
-const hasil = document.getElementById('hasil');
 
 let useProxy = false;
-let proxyBase = '';
+let proxyBase = ''; // kosongkan jika pakai API langsung
 
 function debounce(fn, wait) {
-    let t;
-    return (...args) => {
-        clearTimeout(t);
-        t = setTimeout(()=> fn(...args), wait);
-    };
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), wait);
+  };
 }
 
 async function doCheck() {
-    const uid = uidEl.value.trim();
-    const zone = zoneEl.value.trim();
-    if (!uid || !zone) {
-        result.innerHTML = '';
-        return;
+  const uid = uidEl.value.trim();
+  const zone = zoneEl.value.trim();
+  if (!uid || !zone) {
+    result.innerHTML = '';
+    return;
+  }
+
+  result.innerHTML = '🔄 Mengecek nickname & region...';
+  try {
+    // --- Ambil Nickname ---
+    const nickRes = await fetch(`https://api.isan.eu.org/nickname/ml?id=${encodeURIComponent(uid)}&zone=${encodeURIComponent(zone)}`);
+    if (!nickRes.ok) throw new Error('Gagal mengambil nickname.');
+    const nickJson = await nickRes.json();
+
+    let nickname = null;
+    if (nickJson?.nickname) nickname = nickJson.nickname;
+    else if (nickJson?.data?.nickname) nickname = nickJson.data.nickname;
+    else if (nickJson?.name) nickname = nickJson.name;
+    else if (nickJson?.nick) nickname = nickJson.nick;
+    else if (nickJson?.result && typeof nickJson.result === 'string') nickname = nickJson.result;
+
+    // --- Ambil Region ---
+    const regionRes = await fetch(`/api/check-region?uid=${encodeURIComponent(uid)}&zone=${encodeURIComponent(zone)}`);
+    let region = "Tidak ditemukan";
+    if (regionRes.ok) {
+      const regionJson = await regionRes.json();
+      if (regionJson?.region) region = regionJson.region;
     }
-    result.innerHTML = 'Loading...';
-    try {
-        let url;
-        if (useProxy && proxyBase) {
-            url = `${proxyBase}?uid=${encodeURIComponent(uid)}&zone=${encodeURIComponent(zone)}`;
-        } else if (useProxy && !proxyBase) {
-            result.innerHTML = '<div class="error">Proxy belum diatur pada script. Edit variabel <code>proxyBase</code>.</div>';
-            return;
-        } else {
-            url = `https://api.isan.eu.org/nickname/ml?id=${encodeURIComponent(uid)}&zone=${encodeURIComponent(zone)}`;
-        }
-        const res = await fetch(url);
-        if (!res.ok) {
-            result.innerHTML = `<div class="error">User ID tidak ditemukan.</div>`;
-            return;
-        }
-        const json = await res.json();
-        let nick = null;
-        if (json?.nickname) nick = json.nickname;
-        else if (json?.data?.nickname) nick = json.data.nickname;
-        else if (json?.name) nick = json.name;
-        else if (json?.nick) nick = json.nick;
-        else if (json?.result && typeof json.result === 'string') nick = json.result;
-        if (nick) {
-            result.innerHTML = `<div class="ok"><div>Selamat datang, ${escapeHtml(nick)}</div>`;
-        } else {
-            result.innerHTML = '<div class="error">Nickname tidak ditemukan pada response. Lihat konsol untuk detail.</div>';
-            console.log('Full response JSON:', json);
-        }
-    } catch (err) {
-        result.innerHTML = `<div class="error">Gagal: ${escapeHtml(err.message)}<br/><small>Jika ini error CORS, gunakan proxy di server (lihat contoh di bawah) atau coba endpoint lain.</small></div>`;
-        console.error(err);
+
+    if (nickname) {
+      result.innerHTML = `
+        ✅ Nickname: <b>${escapeHtml(nickname)}</b><br>
+        🌍 Region: <b>${escapeHtml(region)}</b>
+      `;
+    } else {
+      result.innerHTML = `<div class="error">Nickname tidak ditemukan.</div>`;
     }
+
+  } catch (err) {
+    console.error(err);
+    result.innerHTML = `<div class="error">⚠️ Gagal: ${escapeHtml(err.message)}</div>`;
+  }
 }
-
-let timeout = null; // untuk mencegah spam request
-
-async function autoCek() {
-    clearTimeout(timeout);
-    timeout = setTimeout(async () => {
-        const uid = uidInput.value.trim();
-        const zone = zoneInput.value.trim();
-        if (uid && zone) {
-            hasil.innerText = "Loading...";
-            try {
-                const res = await fetch(`/api/check-region?uid=${uid}&zone=${zone}`);
-                const data = await res.json();
-                if (data.error) {
-                    hasil.innerHTML = "" + data.error;
-                } else {
-                    hasil.innerHTML = `<div class="done"><div>${data.region}</div></div>`;
-                }
-            } catch (err) {
-                hasil.innerText = "";
-            }
-        }
-    }, 800); // jeda 0.8 detik biar gak spam tiap ketik
-}
-
-uidInput.addEventListener('input', autoCek);
-zoneInput.addEventListener('input', autoCek);
 
 const debouncedCheck = debounce(doCheck, 700);
 
@@ -137,6 +112,12 @@ zoneEl.addEventListener('input', debouncedCheck);
 uidEl.addEventListener('paste', () => setTimeout(debouncedCheck, 50));
 zoneEl.addEventListener('paste', () => setTimeout(debouncedCheck, 50));
 
-function escapeHtml(str){ return String(str).replace(/[&<>"']/g, s=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[s])); }
-
-btn.addEventListener('click', doCheck);
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, s => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[s]));
+}
