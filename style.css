@@ -583,8 +583,9 @@ footer a {
 .input-button input, select {
     font-family: "TSMedium";
     width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: -2px;
     margin: 8px 0;
     border-radius: 6px;
     border: none;
