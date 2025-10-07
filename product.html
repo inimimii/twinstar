@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TwinStar Digital Store">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="TwinStar Team">
+        <title>TwinStar Store</title>
+        <link rel="icon" type="image/x-icon" href="image/favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <!-- Navigasi -->
+            <button class="nav-toggle">☰</button>
+            <a href="index.html"><div class="nav-logo"><img id="nav-logo" src="image/navlogo.png" alt="TwinStar Logo"><img src="image/nyan.gif" alt="cat"></div></a>
+            <div class="nav-sidebar" id="sidebar">
+                <img id="sidebar-logo" src="image/sidlogo.png" alt="TwinStar Logo">
+                <a href="index.html"><span class="sidebar-text">✦ㅤBeranda</span></a>
+                <a href="topupgame.html"><span class="sidebar-text">✦ㅤTop-up Game</span></a>
+                <a href="vouchergame.html"><span class="sidebar-text">✦ㅤVoucher Game</span></a>
+                <a href="apppremium.html"><span class="sidebar-text">✦ㅤApp Premium</span></a>
+                <a href="pulsatoken.html"><span class="sidebar-text">✦ㅤPulsa & Token</span></a>
+                <a href="socialmedia.html"><span class="sidebar-text">✦ㅤLayanan Sosmed</span></a>
+                <a href="paidedit.html"><span class="sidebar-text">✦ㅤPaid Edit</span></a>
+            </div>
+        </header>
+        <div class="overlay" id="overlay"></div>
+        <main>
+            <!-- Banner -->
+            <section class="banner">
+                <picture>
+                    <source media="(min-width: 769px)" srcset="image/bannerdesktop.jpg">
+                    <img id="banner" src="image/banner.jpg" alt="TwinStar Banner">
+                </picture>
+            </section>
+            <!-- About -->
+            <section class="product-information">
+                <div class="product-title">
+                    <h2><span class="product-title-text">Mobile Legends</span></h2>
+                    <small>Moonton</small>
+                </div>
+            </section>
+            <!-- Data -->
+            <section class="customer-information">
+                <div class="customer-title">
+                    <h2><span class="customer-title-text">Informasi Pelanggan</span></h2>
+                </div>
+                <hr>
+                <div class="input-title">
+                    <label>Masukkan User ID</label>
+                </div>
+                <div class="input-button">
+                    <input type="number" id="uid" placeholder="Contoh: 123456789">
+                </div>
+                <div class="input-title">
+                    <label>Masukkan Server ID</label>
+                </div>
+                <div class="input-button">
+                    <input type="number" id="zone" placeholder="Contoh: 12345">
+                </div>
+                <div class="input-title">
+                    <label>Masukkan Nomor WhatsApp</label>
+                </div>
+                <div class="input-button">
+                    <input type="number" id="noWa" placeholder="Contoh: 0123456789">
+                </div>
+                <div class="result-input" id="result"></div>
+                <div class="result-input" id="hasil"></div>
+            </section>
+            <!-- Item -->
+            <section class="select-product">
+                <div class="select-title">
+                    <h2><span class="select-title-text">Pilih Produk</span></h2>
+                </div>
+            </section>
+            <!-- Confirm -->
+            <section class="confirm-order">
+                <div class="confirm-title">
+                    <h2><span class="confirm-title-text">Konfirmasi Pembelian</span></h2>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img id="footer-logo" src="image/navlogo.png" alt="TwinStar Logo">
+                <p>Top-Up game termurah hanya di TwinStar Store. Pengiriman cepat, 100% legal dengan payment terlengkap di Indonesia.</p>
+            </div>
+            <div>
+                <h4>SITEMAP</h4>
+                <a href="topupgame.html">TopUp Game</a>
+                <a href="vouchergame.html">Voucher Game</a>
+                <a href="apppremium.html">App Premium</a>
+                <a href="pulsatoken.html">Pulsa & Token</a>
+                <a href="socialmedia.html">Layanan Sosmed</a>
+                <a href="paidedit.html">Paid Edit</a>
+            </div>
+            <div>
+                <h4>FOLLOW US</h4>
+                <div class="social-icon">
+                    <a href="https://www.instagram.com/twinstarid"><img src="image/instagram.png" alt="Instagram"></a>
+                    <a href="https://chat.whatsapp.com/HzeNmtnpCmhFxKnELSSNYp"><img src="image/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="https://linktr.ee/twinstarid"><img src="image/linktree.png" alt="LinkTree"></a>
+                </div>
+            </div>
+            <div class="help">
+                <h4>HELP CENTER</h4>
+                <a href="https://wa.me/6282129678431"><button>Customer Service</button></a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
